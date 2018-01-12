@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.testwebrtc.MainActivity">
+
+    <EditText
+        android:id="@+id/roomId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="roomId"/>
+
+    <Button
+        android:id="@+id/buttonLoadVP8"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/roomId"
+        android:text="load VP8Loopback"/>
+
+    <Button
+        android:id="@+id/buttonLoadH264"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/roomId"
+        android:layout_toRightOf="@id/buttonLoadVP8"
+        android:text="load H264 Loopback"/>
+
+    <Button
+        android:id="@+id/buttonLoadP2P"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonLoadVP8"
+        android:layout_toRightOf="@id/buttonLoadVP8"
+        android:text="load P2P"/>
+
+    <WebView
+        android:id="@+id/webpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark">
+    </WebView>
+
+</RelativeLayout>
