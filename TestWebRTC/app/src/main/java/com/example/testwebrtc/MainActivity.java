@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String APPRTC_URL_P2P="https://appr.tc/r/%s";
 
+    public static final String APPRTC_URL_MP4="http://techslides.com/demos/sample-videos/small.mp4";
+
     boolean mWebviewInitialized = false;
 
 
@@ -60,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    View.OnClickListener mBtClickListenerMP4 = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            mWebView.loadUrl(APPRTC_URL_MP4);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +87,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button buttonP2P = (Button) findViewById(R.id.buttonLoadP2P);
         buttonP2P.setOnClickListener(mBtClickListenerP2P);
+
+        Button buttonMP4 = (Button) findViewById(R.id.buttonLoadMP4);
+        buttonMP4.setOnClickListener(mBtClickListenerMP4);
 
     }
 
@@ -120,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             });
+            mWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
             setWebViewSettings();
         }
     }
@@ -138,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
         WebView.setWebContentsDebuggingEnabled(true);
 
-        settings.setAppCacheEnabled(false);
+        settings.setAppCacheEnabled(true);
         settings.setAppCachePath(getCacheDir().toString());
 
         CookieManager cookieManager = CookieManager.getInstance();

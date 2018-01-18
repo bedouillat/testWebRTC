@@ -36,8 +36,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonLoadVP8"
-        android:layout_toRightOf="@id/buttonLoadVP8"
         android:text="load P2P"/>
+
+    <Button
+        android:id="@+id/buttonLoadMP4"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonLoadH264"
+        android:layout_toRightOf="@id/buttonLoadP2P"
+        android:text="load MP4"/>
 
     <WebView
         android:id="@+id/webpage"
